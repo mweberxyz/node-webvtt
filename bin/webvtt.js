@@ -35,7 +35,7 @@ filenames.forEach( function( filename ) {
 
   var data = fs.readFileSync( filename, "utf-8" );
   if( !data ) {
-    console.log( "webvtt: %s: Error - %s", filename, err.message );
+    console.log( "webvtt: %s: Error - %s", filename, data === "" ? "File is blank" : err.message );
     failed = true;
     return;
   }
