@@ -39,6 +39,12 @@ filenames.forEach( function( filename ) {
     failed = true;
     return;
   }
+  else {
+    var endLines = data.match(/([\r\n]*)$/)
+    if(!endLines || endLines[0].length === 0 || endLines[0].replace(/\r/g, "").length > 1) {
+      console.log( "webvtt: %s: Error - %s", filename, "File should end with single newline" );
+    }
+  }
 
   // Strip optional Unicode BOM character
   data = data.replace( /^\uFEFF/, '' );
