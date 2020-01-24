@@ -4,7 +4,8 @@
   "description": "A command line interface and npm package for the WebVTT JavaScript parser.",
   "main": "parser.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build bin/webvtt.js -o dist"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,7 @@
     "shell"
   ],
   "dependencies": {
+    "@zeit/ncc": "^0.21.0",
     "commander": "~1.0.4"
   },
   "author": "David Humphrey <david.humphrey@senecacollege.ca> (@humphd)",
